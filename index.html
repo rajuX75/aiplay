@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chess</title>
+    <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="controls">
+            <div class="ai-select top-left">
+                <label for="ai1-model">AI 1 (White):</label>
+                <select id="ai1-model">
+                    <option value="gemini-pro">Gemini Pro (requires API key)</option>
+                    <option value="gpt-4">GPT-4 (requires API key)</option>
+                    <option value="random">Random Move AI (no key)</option>
+                     </select>
+                <input type="text" id="api-key" placeholder="Enter your API Key">
+                <button id="test-key">Test Key</button>
+                <span id="key-status" class="status"></span>
+            </div>
+
+            <div class="ai-select top-right">
+                <label for="ai2-model">AI 2 (Black):</label>
+                 <select id="ai2-model">
+                    <option value="gemini-pro">Gemini Pro (requires API key)</option>
+                    <option value="gpt-4">GPT-4 (requires API key)</option>
+                    <option value="random">Random Move AI (no key)</option>
+                    </select>
+            </div>
+
+            <button id="play-now" disabled>Play Now</button>
+        </div>
+
+        <div class="game-area">
+            <div id="board" style="width: 400px"></div>
+            <div class="log-panel">
+                <h2>Game Log</h2>
+                <div id="log-content">
+                    <p>Welcome to AI Chess!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+    <script src="https://unpkg.com/chess.js@1.0.0/dist/chess.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
